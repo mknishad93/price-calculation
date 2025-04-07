@@ -133,15 +133,16 @@ def callEveryMinute():
         transaction_type = "SELL" if quantity > 0 else "BUY"
         exit_qty = abs(quantity)
         orderID = kite.place_order(
-     variety=kite.VARIETY_REGULAR,
-     exchange=exchange,  # NFO for options
-     tradingsymbol=tradingsymbol,  # Expiry + Strike + CE/PE
-     transaction_type=transaction_type,
-     quantity=exit_qty,  # Adjust based on lot size
-     order_type=kite.ORDER_TYPE_MARKET,
-     product=item['product']  # Use NRML for overnight F&O
-     )
-     send_telegram_message(f"Trade exited  :: {orderID}")    
+        variety=kite.VARIETY_REGULAR,
+        exchange=exchange,  # NFO for options
+        tradingsymbol=tradingsymbol,  # Expiry + Strike + CE/PE
+        transaction_type=transaction_type,
+        quantity=exit_qty,  # Adjust based on lot size
+        order_type=kite.ORDER_TYPE_MARKET,
+        product=item['product']  # Use NRML for overnight F&O
+        )
+        send_telegram_message(f"Trade exited  :: {orderID}")    
+     
         
  if  now.hour == 15:
      if now.minute >= 00:
