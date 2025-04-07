@@ -1,7 +1,5 @@
 import time
 import deltacalculate.getOption as delta
-import deltacalculate.adjustCE as adjust
-import deltacalculate.adjustPE as adjustpe
 from datetime import datetime
 import logging
 import requests
