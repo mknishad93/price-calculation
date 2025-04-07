@@ -15,7 +15,7 @@ import time
 import sys
 import pytz
 from bs4 import BeautifulSoup
-import yfinance as yf
+
 
 
 
